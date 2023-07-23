@@ -1,0 +1,209 @@
+{
+  "users": [
+    {
+      "id":1,
+      "username": "User",
+      "password": "12345"
+    }
+  ],
+  "articles": [
+    {
+      "header": "Папа Римский предложил патриарху Кириллу провести встречу в московском аэропорту",
+      "description": "Папа Римский Франциск предложил Патриарху Московскому и всея Руси Кириллу организовать встречу в одном из московских аэропортов. Первая встреча патриарха Кирилла и папы римского прошла в 2016 году в аэропорту Гаваны.",
+      "author": "Russia Today",
+      "date": "23.07.2023"
+    },
+    {
+      "header": "Пилот «Ред Булл» выиграл седьмую гонку подряд",
+      "description": "Гонщик «Ред Булл» Макс Ферстаппен выиграл 11-й этап чемпионата мира «Формулы-1» Гран-при Венгрии. Второе место занял британский гонщик McLaren Ландо Норрис, третий — мексиканец Серхио Перес из Red Bull.",
+      "author": "Советский спорт",
+      "date": "23.07.2023"
+    },
+    {
+      "header": "Heroic обыграли NAVI второй раз на BLAST Fall Final",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    },
+    {
+      "header": "",
+      "description": "",
+      "author": "",
+      "date": ""
+    }
+  ]
+}
