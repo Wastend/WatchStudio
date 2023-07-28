@@ -1,8 +1,11 @@
 import React from 'react'
+import MainStart from './MainStart'
 
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <>
+      <MainStart />
+    </>
   )
 }
 

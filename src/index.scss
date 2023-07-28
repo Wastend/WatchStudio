@@ -1,3 +1,5 @@
+$white: #fff;
+
 * {
   margin: 0;
   padding: 0;
@@ -13,12 +15,10 @@ a {
 }
 
 header {
-  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: aqua;
-  padding: 0 4rem 0 4rem;
+  padding: 2rem 10rem 2rem 10rem;
 }
 
 main {
@@ -32,8 +32,28 @@ footer {
   background-color: aqua;
 }
 
+.header__logo {
+  width: 10rem;
+  height: 4rem;
+}
+
 .header__links {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 3rem;
+}
+
+.header__links a {
+  color: $white;
+}
+
+.StartPage {
+  display: flex;
+  background-image: url('./app/assets/fon_start.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: -8.2rem;
+  width: 100%;
+  min-height: 48.3rem;
 }
