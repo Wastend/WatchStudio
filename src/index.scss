@@ -1,4 +1,5 @@
 $white: #fff;
+$hover: #d0d0d0;
 $black: #0f0e0e;
 
 * {
@@ -20,10 +21,18 @@ a {
 header {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
-  padding: 2rem 10rem 2rem 10rem;
+  align-self: center;
+  margin: 2rem 0;
   position: relative;
   z-index: 100;
+}
+
+main {
+  width: 100%;
+  max-width: 1920px;
+  align-self: center;
 }
 
 footer {
@@ -33,8 +42,19 @@ footer {
 }
 
 .logo {
+  margin-left: 10rem;
+}
+
+.logo img {
   width: 10rem;
   height: 4rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10rem;
 }
 
 .nav__list {
@@ -53,19 +73,31 @@ footer {
   line-height: 1;
 }
 
+.nav__link:hover {
+  color: $hover;
+  transition: 1s ease-out;
+}
+
 .nav__link:after {
-	display: block;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background-color: $white;
-	content: "";
-	transition: width 0.3s ease-out;
+  display: block;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: $hover;
+  content: "";
+  transition: width 0.3s ease-out;
 }
 
 .nav__link:hover:after,
 .nav__link:focus:after {
-	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+  width: 100%;
+}
+
+.fon__start{
+  position: absolute;
+  top: -8.3rem;
+  left: 0;
+  width: 100vw;
 }
 
 .start {
@@ -73,27 +105,53 @@ footer {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  margin-top: -14rem;
-  background-image: url('./app/assets/fon_start.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: 1;
-  padding: 14rem 15% 0 15%;
+  padding: 8rem 10% 0 10%;
   height: 34.3rem;
+  gap: 3rem;
 }
 
 .start__info {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  gap: 2rem;
+  z-index: 1;
 }
 
 .start__text {
-  font-size: 4.72rem;
+  font-size: 4rem;
   color: $white;
+}
+
+.link__presentation {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  align-self: flex-end;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+.link__presentation img {
+  position: relative;
+  width: 100%;
+  max-width: 4rem;
+  height: auto;
+}
+
+.link__presentation p {
+  color: $white;
+}
+
+.link__presentation:hover p {
+  color: $hover;
+  transition: 1s ease-out;
 }
 
 .start__image {
   position: relative;
-  max-width: 32.72rem;
+  max-width: 30rem;
   width: 100%;
   height: auto;
 }
@@ -110,22 +168,50 @@ footer {
   color: $white;
 }
 
-@media(max-width: 1024px) {
+@media(min-width:1920px) {
   *{
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 1440px) {
+  .start__text {
+    font-size: 3rem;
+  }
+}
+
+@media(max-width: 1024px) {
+  * {
     font-size: 16px;
   }
 
-  header {
-    padding: 2rem 6rem 2rem 6rem;
+  .start {
+    padding: 0 10%;
+  }
+
+  .start__text {
+    font-size: 3rem;
+  }
+
+  .start__image {
+    max-width: 22rem;
   }
 }
 
 @media(max-width: 768px) {
-  *{
+  * {
     font-size: 14px;
   }
 
-  .nav.open .nav__list{
+  .logo{
+    margin-left: 3rem;
+  }
+
+  .nav{
+    margin-right: 3rem;
+  }
+
+  .nav.open .nav__list {
     display: block;
     position: fixed;
     top: 0;
@@ -140,8 +226,8 @@ footer {
     gap: 8rem;
   }
 
-  .nav.open a{
-    font-size: 4rem;
+  .nav.open a {
+    font-size: 3.5rem;
   }
 
   .nav__list {
@@ -150,10 +236,15 @@ footer {
 
   .nav__button {
     display: block;
-    position: fixed;
+    position: relative;
     z-index: 10;
-    top: 4rem;
-    right: 4rem;
   }
+}
 
+@media(max-width: 375px) {
+
+  .logo img{
+    width: 5rem;
+    height: 2rem;
+  }
 }
