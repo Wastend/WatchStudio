@@ -1,4 +1,5 @@
 $white: #fff;
+$black: #0f0e0e;
 
 * {
   margin: 0;
@@ -6,8 +7,10 @@ $white: #fff;
   font-size: 18px;
 }
 
-html, body {
+html,
+body {
   height: 100%;
+  background-color: $black;
 }
 
 a {
@@ -19,41 +22,138 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 10rem 2rem 10rem;
-}
-
-main {
-  background-color: #f5f7fa;
-  box-sizing: border-box;
-  min-height: calc(100vh - 8rem);
+  position: relative;
+  z-index: 100;
 }
 
 footer {
   height: 4rem;
-  background-color: aqua;
+  color: $white;
+  border-top: 1px solid $white;
 }
 
-.header__logo {
+.logo {
   width: 10rem;
   height: 4rem;
 }
 
-.header__links {
+.nav__list {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 3rem;
 }
 
-.header__links a {
-  color: $white;
+.nav__list li {
+  list-style-type: none;
 }
 
-.StartPage {
+.nav__link {
+  color: $white;
+  line-height: 1;
+}
+
+.nav__link:after {
+	display: block;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: $white;
+	content: "";
+	transition: width 0.3s ease-out;
+}
+
+.nav__link:hover:after,
+.nav__link:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.start {
   display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -14rem;
   background-image: url('./app/assets/fon_start.png');
   background-size: 100%;
   background-repeat: no-repeat;
-  margin-top: -8.2rem;
+  z-index: 1;
+  padding: 14rem 15% 0 15%;
+  height: 34.3rem;
+}
+
+.start__info {
   width: 100%;
-  min-height: 48.3rem;
+}
+
+.start__text {
+  font-size: 4.72rem;
+  color: $white;
+}
+
+.start__image {
+  position: relative;
+  max-width: 32.72rem;
+  width: 100%;
+  height: auto;
+}
+
+.nav__button {
+  border: 0;
+  background-color: transparent;
+  display: none;
+}
+
+.nav__button img {
+  width: 2rem;
+  max-height: 2rem;
+  color: $white;
+}
+
+@media(max-width: 1024px) {
+  *{
+    font-size: 16px;
+  }
+
+  header {
+    padding: 2rem 6rem 2rem 6rem;
+  }
+}
+
+@media(max-width: 768px) {
+  *{
+    font-size: 14px;
+  }
+
+  .nav.open .nav__list{
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $black;
+    padding: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8rem;
+  }
+
+  .nav.open a{
+    font-size: 4rem;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav__button {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: 4rem;
+    right: 4rem;
+  }
+
 }
