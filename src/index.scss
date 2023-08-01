@@ -22,6 +22,7 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 1920px;
   justify-content: space-between;
   align-self: center;
   margin: 2rem 0;
@@ -32,6 +33,8 @@ header {
 main {
   width: 100%;
   max-width: 1920px;
+  display: flex;
+  flex-direction: column;
   align-self: center;
 }
 
@@ -93,21 +96,29 @@ footer {
   width: 100%;
 }
 
-.fon__start{
-  position: absolute;
-  top: -8.3rem;
-  left: 0;
-  width: 100vw;
-}
-
 .start {
   display: flex;
   position: relative;
   justify-content: space-between;
+  background-image: url('./app/assets/fon_start.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 30px #ffffff;
+  align-self: center;
   align-items: center;
-  padding: 8rem 10% 0 10%;
+  padding: 0rem 10% 0 10%;
+  width: 100%;
   height: 34.3rem;
   gap: 3rem;
+}
+
+.fon__start {
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  left: 0;
+  width: 100%;
 }
 
 .start__info {
@@ -169,8 +180,12 @@ footer {
 }
 
 @media(min-width:1920px) {
-  *{
+  * {
     font-size: 20px;
+  }
+
+  .start {
+    border-radius: 10px;
   }
 }
 
@@ -203,11 +218,11 @@ footer {
     font-size: 14px;
   }
 
-  .logo{
+  .logo {
     margin-left: 3rem;
   }
 
-  .nav{
+  .nav {
     margin-right: 3rem;
   }
 
@@ -239,11 +254,23 @@ footer {
     position: relative;
     z-index: 10;
   }
+
+  .start {
+    padding: 0 1rem;
+  }
+
+  .start__text {
+    font-size: 2rem;
+  }
+  
+  .start__image {
+    max-width: 16rem;
+  }
 }
 
 @media(max-width: 375px) {
 
-  .logo img{
+  .logo img {
     width: 5rem;
     height: 2rem;
   }
