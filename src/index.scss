@@ -1,11 +1,14 @@
 $white: #fff;
 $hover: #d0d0d0;
 $black: #0f0e0e;
+$square: #131618;
+$shadow: #ffffff18;
 
 * {
   margin: 0;
   padding: 0;
   font-size: 18px;
+  color: $white;
 }
 
 html,
@@ -40,7 +43,6 @@ main {
 
 footer {
   height: 4rem;
-  color: $white;
   border-top: 1px solid $white;
 }
 
@@ -72,7 +74,6 @@ footer {
 }
 
 .nav__link {
-  color: $white;
   line-height: 1;
 }
 
@@ -123,7 +124,8 @@ footer {
 .start__info {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-self: center;
+  width: 50%;
   gap: 2rem;
   z-index: 1;
   margin-left: 1rem;
@@ -131,7 +133,6 @@ footer {
 
 .start__text {
   font-size: 4rem;
-  color: $white;
 }
 
 .link__presentation {
@@ -149,10 +150,6 @@ footer {
   width: 100%;
   max-width: 4rem;
   height: auto;
-}
-
-.link__presentation p {
-  color: $white;
 }
 
 .link__presentation:hover p {
@@ -177,8 +174,70 @@ footer {
 .nav__button img {
   width: 2rem;
   max-height: 2rem;
-  color: $white;
 }
+
+.company {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50rem;
+  gap: 5.7rem;
+  padding: 1rem;
+}
+
+.company__images {
+  display: flex;
+  width: 50%;
+  position: relative;
+}
+
+.company__watch_1 {
+  position: absolute;
+  top: -6.7rem;
+  right: 2.5rem;
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  border-radius: 1rem;
+  z-index: 3;
+}
+
+.company__watch_2 {
+  position: absolute;
+  top: 18rem;
+  right: 10rem;
+  width: 100%;
+  max-width: 27rem;
+  height: auto;
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.company__square {
+  position: absolute;
+  background-color: $square;
+  right: 0;
+  top: 6rem;
+  width: 24rem;
+  height: 31rem;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.company__info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 7rem;
+  gap: 3.5rem;
+}
+
+.company__header {
+  font-size: 4rem;
+  text-shadow: 25px 25px $shadow;
+}
+
+.company__description {}
 
 @media(min-width:1920px) {
   * {
@@ -190,6 +249,12 @@ footer {
   }
 }
 
+@media(max-width: 1920px) {
+  .start__text {
+    margin-left: 15%;
+  }
+}
+
 @media(max-width: 1440px) {
   .start__text {
     font-size: 3rem;
@@ -197,6 +262,7 @@ footer {
 }
 
 @media(max-width: 1024px) {
+
   * {
     font-size: 16px;
   }
@@ -207,6 +273,26 @@ footer {
 
   .start__image {
     max-width: 22rem;
+  }
+
+  .company__watch_1 {
+    max-width: 18rem;
+  }
+
+  .company__watch_2 {
+    right: 5rem;
+    max-width: 19rem;
+    top: 12rem;
+  }
+
+  .company__square {
+    top: 1.5rem;
+    width: 18rem;
+    height: 25rem;
+  }
+
+  .company__header {
+    font-size: 3rem;
   }
 }
 
@@ -259,12 +345,76 @@ footer {
   .start__image {
     max-width: 16rem;
   }
+
+  .company {
+    gap: 1rem;
+  }
+
+  .company__images {
+    width: 40%;
+  }
+
+  .company__watch_1 {
+    right: 15%;
+  }
+
+  .company__watch_2 {
+    top: 25vw;
+    right: 15%;
+  }
+
+  .company__info {
+    width: 60%;
+  }
 }
 
 @media(max-width: 425px) {
 
   .start__image {
     max-width: 14rem;
+  }
+
+  .company {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .company__images {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .company__watch_1 {
+    max-width: 14rem;
+    top: 1.5rem;
+    right: auto;
+  }
+
+  .company__watch_2 {
+    max-width: 15rem;
+    top: 14rem;
+    right: auto;
+  }
+
+  .company__square {
+    top: 3rem;
+    right: auto;
+    height: 20rem;
+  }
+
+  .company__info {
+    margin: 0;
+    width: 100%;
+  }
+
+  .company__header {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .company__description {
+    text-align: center;
   }
 }
 
@@ -279,7 +429,7 @@ footer {
     align-items: center;
     padding: 2rem 0;
     gap: 1rem;
-    
+
   }
 
   .start__info {
@@ -291,6 +441,7 @@ footer {
 
   .start__text {
     text-align: center;
+    margin-left: 0;
   }
 
   .start__info a {
@@ -304,5 +455,31 @@ footer {
   .logo img {
     width: 5rem;
     height: 2rem;
+  }
+
+  .company {
+    height: 60rem;
+    gap: 28rem;
+  }
+}
+
+@media(max-width: 320px) {
+
+  .company {
+    gap: 0;
+  }
+
+  .company__watch_1 {
+    max-width: 10rem;
+  }
+
+  .company__watch_2 {
+    max-width: 11rem;
+  }
+
+  .company__square {
+    width: 14rem;
+    height: 15rem;
+    top: 5rem;
   }
 }
