@@ -5,7 +5,7 @@ const MainContacts = () => {
     return (
         <div className='contacts'>
             <div className="contacts__info">
-                <p className="contacts__info_header"></p>
+                <h3 className="contacts__info_header">Контакты</h3>
                 <a href='https://goo.gl/maps/Y42VMTTu4Sm9trkz9' className="contacts__info_element">
                     <img src={images.icon__position} alt="position" />
                     Россия, Москва, 1-я Фрезерная ул., д.2/1, корп.9

@@ -5,7 +5,7 @@ const MainStart = () => {
   return (
       <div className='start'>
         <div className="start__info">
-          <p className="start__text">Часовое ателье Дмитрия Котова</p>
+          <h1 className='start__text'>Часовое ателье Дмитрия Котова</h1>
           <a href='https://www.youtube.com/watch?v=xm5kRU06wxw' target='_blank' rel="noreferrer" className="link__presentation">
             <img src={images.button__play} alt='play'></img>
             <p >Смотреть видео презентацию</p>

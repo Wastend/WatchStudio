@@ -17,6 +17,14 @@ body {
   background-color: $black;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -131,10 +139,6 @@ footer {
   margin-left: 1rem;
 }
 
-.start__text {
-  font-size: 4rem;
-}
-
 .link__presentation {
   display: flex;
   align-items: center;
@@ -233,11 +237,65 @@ footer {
 }
 
 .company__header {
-  font-size: 4rem;
   text-shadow: 25px 25px $shadow;
 }
 
-.company__description {}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding-left: 15vw;
+  width: 100%;
+  height: 39rem;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #000 60%) ,url('./app/assets/map.png');
+  box-shadow: 0 0 2rem   #ffffff;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: auto;
+  border: 1px solid $white;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem #ffffff;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.contacts__info_header {
+  align-self: center;
+  text-shadow: 15px 20px $shadow;
+}
+
+.contacts__info_block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contacts__info_element {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.contacts__info_element img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.button__send {
+  align-self: center;
+  width: 15rem;
+  height: 1.5rem;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 0.3rem;
+  box-shadow: -0.5rem 0.5rem 1px $shadow;
+}
 
 @media(min-width:1920px) {
   * {
@@ -256,7 +314,8 @@ footer {
 }
 
 @media(max-width: 1440px) {
-  .start__text {
+  
+  h1 {
     font-size: 3rem;
   }
 }
@@ -265,10 +324,6 @@ footer {
 
   * {
     font-size: 16px;
-  }
-
-  .start__text {
-    font-size: 3rem;
   }
 
   .start__image {
@@ -291,14 +346,16 @@ footer {
     height: 25rem;
   }
 
-  .company__header {
-    font-size: 3rem;
-  }
 }
 
 @media(max-width: 768px) {
+
   * {
     font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 
   .logo {
@@ -336,10 +393,6 @@ footer {
     display: block;
     position: relative;
     z-index: 10;
-  }
-
-  .start__text {
-    font-size: 2rem;
   }
 
   .start__image {
@@ -409,7 +462,6 @@ footer {
   }
 
   .company__header {
-    font-size: 2.5rem;
     text-align: center;
   }
 
