@@ -1,4 +1,5 @@
 $white: #fff;
+$gray: #d2d2d2;
 $hover: #d0d0d0;
 $black: #0f0e0e;
 $square: #131618;
@@ -43,7 +44,7 @@ header {
 
 main {
   width: 100%;
-  max-width: 1920px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -54,8 +55,10 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  align-self: center;
   padding: 3rem 0;
   width: 100%;
+  max-width: 1920px;
 }
 
 .logo {
@@ -326,26 +329,55 @@ footer {
 .auth {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('./app/assets/fon_auth.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .auth__block {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: $hover;
-  color: $black;
+  border-radius: 1rem;
   width: 20rem;
-  height: 100%;
+  gap: 1rem;
+}
+
+.auth__header {
+  color: $white;
+  text-align: center;
+}
+
+.auth__block form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 form input {
+  height: 1.6rem;
+  border-radius: 0.4rem;
+  background-color: $gray;
+  width: 100%;
+  padding: 0 1rem;
+  color: $square;
+}
+
+.button__login {
+  background-color: $gray;
+  width: 60%;
+  height: 1.8rem;
+  border-radius: 0.4rem;
+  color: $square;
+  cursor: pointer;
+}
+
+.button__login:disabled {
   background-color: $square;
+  color: $shadow;
+  cursor: auto;
 }
 
 @media(min-width:1920px) {

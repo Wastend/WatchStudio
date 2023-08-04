@@ -11,17 +11,19 @@ function App() {
     const response = localStorage.getItem('isAuth')
     response === null ? setIsAuth(false) : setIsAuth(true)
   }, [dispatch])
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<MainLayout />} >
           <Route path='/' element={<pages.MainPage />} />
           <Route path='/articles' element={<pages.ArticlesPage />} />
-          {isAuth && <Route path='/profile' element={<pages.ProfilePage />} />}
+          {isAuth ? <Route path='/profile' element={<pages.ProfilePage />} />
+            : ["/login", "/profile"].map((path, index) =>
+              <Route path={path} element={<pages.AuthPage />} key={index} />
+            )
+          }
         </Route>
-        {!isAuth && ["/login", "/profile"].map((path, index) =>
-          <Route path={path} element={<pages.AuthPage />} key={index} />
-        )}
         <Route path='*' element={<pages.ErrorPage />} />
       </Routes>
     </BrowserRouter >
