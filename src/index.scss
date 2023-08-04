@@ -323,6 +323,31 @@ footer {
   list-style-type: none;
 }
 
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./app/assets/fon_auth.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $hover;
+  color: $black;
+  width: 20rem;
+  height: 100%;
+}
+
+form input {
+  background-color: $square;
+}
+
 @media(min-width:1920px) {
 
   * {

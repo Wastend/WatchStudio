@@ -1,8 +1,13 @@
 import React from 'react'
 
 const ProfilePage = () => {
+  const exit = () => {
+    localStorage.removeItem('isAuth')
+  }
   return (
-    <div>ProfilePage</div>
+    <button onClick={exit}>
+      Выход
+    </button>
   )
 }
 
