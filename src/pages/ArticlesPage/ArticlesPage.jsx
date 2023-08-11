@@ -36,7 +36,7 @@ const ArticlesPage = () => {
 
   useEffect(() => {
     if (data.length !== 0) {
-      const array = text === '' ? data : data.filter(article => article.header.toLowerCase().includes(text))
+      const array = text === '' ? data : data.filter(article => article.header.toLowerCase().includes(text.toLowerCase()))
       paginate(1)
       setFilteredArticles(array)
     }
