@@ -1,21 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLayout from './app/components/layout/MainLayout'
 import pages from './pages/index'
-import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { useGetArticlesQuery } from './app/store'
+import db from './app/data/db.json'
 
 function App() {
 
-  const dispatch = useDispatch()
   const [isAuth, setIsAuth] = useState(false)
-  
+
   useEffect(() => {
     const response = localStorage.getItem('user')
     response === null ? setIsAuth(false) : setIsAuth(true)
-  }, [dispatch])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.location.href])
 
-  const { data = [] } = useGetArticlesQuery()
+  const data = db.articles
 
   return (
     <BrowserRouter>

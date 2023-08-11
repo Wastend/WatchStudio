@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useGetUsersQuery } from '../app/store'
+import db from '../app/data/db.json'
 
 const ProfilePage = () => {
 
@@ -7,7 +7,8 @@ const ProfilePage = () => {
     window.scrollTo(0,0)
   },[])
 
-  const { data = [] } = useGetUsersQuery()
+  const data = db.users
+
   const userId = localStorage.getItem('user')
 
   const exit = () => {

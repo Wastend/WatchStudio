@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import images from '../../../assets/index'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
-  const isAuth = localStorage.getItem('isAuth')
+
+  const [isAuth, setIsAuth] = useState(false)
+
+  useEffect(() => {
+    const response = localStorage.getItem('user')
+    response === null ? setIsAuth(false) : setIsAuth(true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.location.href])
 
   return (
     <header>

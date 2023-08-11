@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { debounce } from 'lodash'
-import { useGetArticlesQuery } from '../../app/store'
+import db from '../../app/data/db.json'
 import ArticlesCard from './ArticlesCard'
 import Pagination from '../../app/components/layout/Pagination'
 
 
 const ArticlesPage = () => {
 
-  const { data = [], isLoading } = useGetArticlesQuery()
+  const data = db.articles
   
   const screenWidth = window.screen.width
 
@@ -46,9 +46,6 @@ const ArticlesPage = () => {
   const handleText = debounce((e) => {
     setText(e.target.value)
   }, 1000)
-
-
-  if (isLoading) return <h1>loading...</h1>
 
   return (
     <div className='articles'>

@@ -1,4 +1,6 @@
 $white: #fff;
+$success: #b7ffbc;
+$success__text: #11a21b;
 $error: #fcc;
 $error__text: #aa423c;
 $gray: #d2d2d2;
@@ -272,6 +274,25 @@ footer {
   box-shadow: 0 0 2rem $white;
 }
 
+.contacts__success {
+  display: none;
+  position: absolute;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 18rem;
+  height: 2rem;
+  background-color: $success;
+  border: 1px solid $success__text;
+  align-self: center;
+  border-radius: 0.5rem;
+  z-index: 100;
+}
+
+.contacts__success p {
+  color: $success__text;
+  font-weight: bold;
+}
+
 .contacts__info {
   display: flex;
   flex-direction: column;
@@ -366,16 +387,16 @@ footer {
   z-index: 100;
 }
 
-.auth__error.error__open {
+.auth__error.open, .contacts__success.open {
   display: flex;
-  animation: error__open 1s;
+  animation: open 1s;
   margin-top: -20rem;
 }
 
-.auth__error.error__close {
+.auth__error.close, .contacts__success.close {
   display: flex;
   margin-top: -1000rem;
-  animation: error__close 1s;
+  animation: close 1s;
 }
 
 .auth__error p {
@@ -383,13 +404,13 @@ footer {
   font-weight: bold;
 }
 
-.auth__error button {
+.auth__error button, .contacts__success button {
   background-color: transparent;
   border: transparent;
   cursor: pointer;
 }
 
-.auth__error button:after {
+.auth__error button:after, .contacts__success button:after {
   display: inline-block;
   font-size: 1.5rem;
   content: "\00d7";
@@ -655,7 +676,7 @@ input {
   text-align: justify;
 }
 
-@keyframes error__open {
+@keyframes open {
   from {
     margin-top: -50rem;
   }
@@ -665,7 +686,7 @@ input {
   }
 }
 
-@keyframes error__close {
+@keyframes close {
   from {
     margin-top: -20rem;
   }

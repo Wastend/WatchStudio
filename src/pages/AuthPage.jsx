@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useGetUsersQuery } from '../app/store'
+import db from '../app/data/db.json'
 
 const AuthPage = () => {
 
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
-  const { data = [] } = useGetUsersQuery()
+  const data = db.users
   const [error, setError] = useState('')
 
   const submit = async (event) => {
@@ -25,7 +25,7 @@ const AuthPage = () => {
 
   return (
     <div className='auth'>
-      <div className={`auth__error${error === true ? ' error__open' : error === false ? ' error__close' : ''}`}>
+      <div className={`auth__error${error === true ? ' open' : error === false ? ' close' : ''}`}>
         <p>Имя пользователя или пароль введены неверно</p>
         <button onClick={() => setError(false)}></button>
       </div>

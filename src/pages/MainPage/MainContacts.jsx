@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import images from '../../app/assets/index'
 
 const MainContacts = () => {
+
+    const [send, setSend] = useState('')
+
+    const submit = async (event) => {
+        event.preventDefault()
+        setSend(true)
+        setTimeout(() => {
+            setSend(false)
+        }, 4000);
+    }
+
     return (
         <div className='contacts'>
+            <div className={`contacts__success${send === true ? ' open' : send === false ? ' close' : ''}`}>
+                <p>Заявка успешно отправлена</p>
+                <button onClick={() => setSend(false)}></button>
+            </div>
+
             <div className="contacts__info">
                 <h3 className="contacts__info_header">Контакты</h3>
                 <a href='https://goo.gl/maps/Y42VMTTu4Sm9trkz9' className="contacts__info_element">
@@ -12,27 +28,27 @@ const MainContacts = () => {
                 </a>
                 <div className="contacts__info_block">
                     <a href='tel:+79999999999' className="contacts__info_element">
-                    <img src={images.icon__phone} alt="position" />
-                    {'+7 (999) 999 99 99'}
+                        <img src={images.icon__phone} alt="position" />
+                        {'+7 (999) 999 99 99'}
                     </a>
                     <a href='mailto:wastend318@gmail.com' className="contacts__info_element">
-                    <img src={images.icon__message} alt="position" />
-                    wastend318@gmail.com
+                        <img src={images.icon__message} alt="position" />
+                        wastend318@gmail.com
                     </a>
                 </div>
 
                 <div className="contacts__info_block">
                     <a href='https://www.instagram.com/wwastend/' className="contacts__info_element">
-                    <img src={images.icon__instagram} alt="position" />
-                    wwastend
+                        <img src={images.icon__instagram} alt="position" />
+                        wwastend
                     </a>
                     <a href='https://www.facebook.com/elonreevesmusk' className="contacts__info_element">
-                    <img src={images.icon__facebook} alt="position" />
-                    elonreevesmusk
+                        <img src={images.icon__facebook} alt="position" />
+                        elonreevesmusk
                     </a>
                 </div>
 
-                <button className="button__send">Оставить заявку на звонок</button>
+                <button className="button__send" onClick={submit}>Оставить заявку на звонок</button>
 
             </div>
         </div>
