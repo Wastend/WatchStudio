@@ -1,18 +1,19 @@
 import React from 'react'
 import images from '../../../assets/index'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <footer>
       <div className='footer__info'>
-        <a className='logo' href='/' ><img src={images.logo} alt="Logo" /></a>
+        <NavLink className='logo' to='/' ><img src={images.logo} alt="Logo" /></NavLink>
         <p className='footer__author'>Ⓒ Wastend, 2023</p>
       </div>
 
       <nav className='footer__nav'>
         <ul>
-          <li ><a className='nav__link' href="/articles">Новости</a></li>
-          <li ><a className='nav__link' href='/profile'>Профиль</a></li>
+          <li ><NavLink className='nav__link' to="/articles">Новости</NavLink></li>
+          <li ><NavLink className='nav__link' to='/profile'>Профиль</NavLink></li>
         </ul>
         <ul>
           <li className='footer__media'>

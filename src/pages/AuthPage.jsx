@@ -1,23 +1,34 @@
 import React, { useState } from 'react'
+import { useGetUsersQuery } from '../app/store'
 
 const AuthPage = () => {
 
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
+  const { data = [] } = useGetUsersQuery()
+  const [error, setError] = useState('')
 
   const submit = async (event) => {
     event.preventDefault()
-    if (login.toLowerCase() === 'user' && password === '12345') {
-      localStorage.setItem('isAuth', login)
+    const user = data.filter(el => el.login.toLowerCase() === login.toLowerCase() && el.password === password)
+    if (user.length) {
+      localStorage.setItem('user', user[0].id)
       window.location.href = 'profile'
     }
     else {
-      alert('Имя пользователя или пароль введены неверно')
+      setError(true)
+      setTimeout(() => {
+        setError(false)
+      }, 4000);
     }
   }
 
   return (
     <div className='auth'>
+      <div className={`auth__error${error === true ? ' error__open' : error === false ? ' error__close' : ''}`}>
+        <p>Имя пользователя или пароль введены неверно</p>
+        <button onClick={() => setError(false)}></button>
+      </div>
       <div className="auth__block">
         <h3 className='auth__header'>Авторизация</h3>
         <form onSubmit={submit} action="">

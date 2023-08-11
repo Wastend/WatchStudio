@@ -6,8 +6,11 @@ export const articlesApi = createApi({
   endpoints: (boild) => ({
     getArticles: boild.query({
       query: () => 'articles'
-    })
+    }),
+    getUsers: boild.query({
+      query: () => 'users'
+    }),
   })
 })
 
-export const { useGetArticlesQuery } = articlesApi
+export const { useGetArticlesQuery, useGetUsersQuery } = articlesApi
