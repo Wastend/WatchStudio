@@ -8,7 +8,7 @@ By going to the page of a separate article, you can get acquainted with its more
 ## Getting Started
 1. Clone the repo
 ````
-git clone https://github.com/Wastend/WastchStudio.git
+git clone https://github.com/Wastend/WatchStudio.git
 ````
 2. Open folder WastchStudio
 3. Open console
