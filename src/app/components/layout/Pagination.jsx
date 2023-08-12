@@ -8,11 +8,16 @@ const Pagination = ({ articlesPerPage, totalArticles, paginate, currentPage }) =
     pageNumbers.push(i)
   }
 
+  const setPage = (number) => {
+    paginate(number)
+    window.scrollTo(0, 0)
+  }
+
   return (
     <ul className='pagination'>
       {pageNumbers.map(number => (
         <li key={number}>
-          <button onClick={() => paginate(number)} className={`pagination__button${currentPage === number ? ' active' : ''}`}>
+          <button onClick={() => setPage(number)} className={`pagination__button${currentPage === number ? ' active' : ''}`}>
             {number}
           </button>
         </li>

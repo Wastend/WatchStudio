@@ -9,6 +9,8 @@ const ArticlePage = (props) => {
     window.scrollTo(0, 0)
   }, [])
 
+  console.log(localStorage.getItem('page'));
+
   return (
     <div className='news'>
       <div className="news__topbar">
