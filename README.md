@@ -18,6 +18,6 @@ npm i
 ```
 5. After the installation is complete, enter the following command
 ```
-npm run dev
+npm run start
 ```
 6. Open website localhost:3000
