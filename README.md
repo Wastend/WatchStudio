@@ -21,3 +21,7 @@ npm i
 npm run start
 ```
 6. Open website localhost:3000
+
+Values for authorization:
+login: user
+password: 12345
