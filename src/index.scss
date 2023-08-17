@@ -1,15 +1,4 @@
-$white: #fff9f9;
-$success: #b7ffbc;
-$success__text: #11a21b;
-$error: #fcc;
-$error__text: #aa423c;
-$gray: #d2d2d2;
-$hover: #d0d0d0;
-$black: #0f0e0e;
-$square: #131618;
-$square__hover: #252a2d;
-$shadow: #ffffff18;
-$dark__gray: #d2d2d289;
+@import './app/configs/colors.scss';
 
 * {
   margin: 0;
@@ -88,201 +77,34 @@ footer {
   height: 4rem;
 }
 
-.nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 10rem;
-}
-
-.nav__list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 3rem;
-}
-
-.nav__list li {
-  list-style-type: none;
-}
-
-.nav__link {
-  line-height: 1;
-}
-
-.nav__link:hover {
-  color: $hover;
-  transition: 1s ease-out;
-}
-
-.nav__link:after {
-  display: block;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: $hover;
-  content: "";
-  transition: width 0.3s ease-out;
-}
-
-.nav__link:hover:after,
-.nav__link:focus:after {
-  width: 100%;
-}
-
 .menu__link {
   text-shadow: 1.5rem 1.5rem $shadow;
 }
 
-.start {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  background-image: url('./app/assets/fon_start.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  box-shadow: 0 0 2rem $white;
-  align-self: center;
-  align-items: center;
-  width: 100%;
-  height: 34.3rem;
-  gap: 3rem;
-}
-
-.fon__start {
-  position: absolute;
-  top: 0%;
-  height: 100%;
-  left: 0;
-  width: 100%;
-}
-
-.start__info {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  width: 50%;
-  gap: 2rem;
-  z-index: 1;
-  margin-left: 0.8rem;
-}
-
-.link__presentation {
-  display: flex;
-  align-items: center;
-  position: relative;
-  background-color: transparent;
-  align-self: flex-end;
-  gap: 2rem;
-  cursor: pointer;
-}
-
-.link__presentation img {
-  position: relative;
-  width: 100%;
-  max-width: 4rem;
-  height: auto;
-}
-
-.link__presentation:hover p {
-  color: $hover;
-  transition: 1s ease-out;
-}
-
-.start__image {
-  position: relative;
-  max-width: 30rem;
-  width: 100%;
-  height: auto;
-  margin-right: 0.8rem;
-}
-
-.nav__button {
+.button__nav {
   border: 0;
   background-color: transparent;
   display: none;
 }
 
-.nav__button img {
+.button__nav img {
   width: 2rem;
   max-height: 2rem;
 }
 
-.company {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 50rem;
-  gap: 5.7rem;
-  padding: 1rem;
+.button__send {
+  align-self: center;
+  width: 15rem;
+  height: 2.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid $white;
+  border-radius: 0.3rem;
+  box-shadow: -0.5rem 0.5rem 1px $shadow;
+  transition: 1s;
 }
 
-.company__images {
-  display: flex;
-  width: 50%;
-  position: relative;
-}
-
-.company__watch_1 {
-  position: absolute;
-  top: -6.7rem;
-  right: 2.5rem;
-  width: 100%;
-  max-width: 25rem;
-  height: auto;
-  border-radius: 1rem;
-  z-index: 3;
-}
-
-.company__watch_2 {
-  position: absolute;
-  top: 18rem;
-  right: 10rem;
-  width: 100%;
-  max-width: 27rem;
-  height: auto;
-  border-radius: 1rem;
-  z-index: 2;
-}
-
-.company__square {
-  position: absolute;
-  background-color: $square;
-  right: 0;
-  top: 6rem;
-  width: 24rem;
-  height: 31rem;
-  border-radius: 1rem;
-  z-index: 1;
-}
-
-.company__info {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-top: 7rem;
-  gap: 3.5rem;
-}
-
-.company__header {
-  text-shadow: 1.5rem 1.5rem $shadow;
-}
-
-.contacts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 39rem;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $black 60%), url('./app/assets/map.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 2rem $white;
-}
-
-.contacts__success {
+.success {
   display: none;
   position: absolute;
   align-items: center;
@@ -297,58 +119,9 @@ footer {
   z-index: 100;
 }
 
-.contacts__success p {
+.success__text {
   color: $success__text;
   font-weight: bold;
-}
-
-.contacts__info {
-  display: flex;
-  flex-direction: column;
-  width: 20rem;
-  height: auto;
-  border: 1px solid $white;
-  border-radius: 0.8rem;
-  box-shadow: 0 0 1rem $white;
-  margin-left: 15vw;
-  padding: 1rem;
-  gap: 1rem;
-}
-
-.contacts__info_header {
-  align-self: center;
-  text-shadow: 1rem 1.2rem $shadow;
-}
-
-.contacts__info_block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.contacts__info_element {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.2rem;
-}
-
-.contacts__info_element img {
-  width: 1rem;
-  height: 1rem;
-}
-
-.button__send {
-  align-self: center;
-  width: 15rem;
-  height: 2.5rem;
-  background-color: transparent;
-  cursor: pointer;
-  border: 1px solid $white;
-  border-radius: 0.3rem;
-  box-shadow: -0.5rem 0.5rem 1px $shadow;
-  transition: 1s;
 }
 
 .button__send:hover {
@@ -397,14 +170,14 @@ footer {
 }
 
 .auth__error.open,
-.contacts__success.open {
+.success.open {
   display: flex;
   animation: open 1s;
   margin-top: -20rem;
 }
 
 .auth__error.close,
-.contacts__success.close {
+.success.close {
   display: flex;
   margin-top: -1000rem;
   animation: close 1s;
@@ -416,14 +189,14 @@ footer {
 }
 
 .auth__error button,
-.contacts__success button {
+.success button {
   background-color: transparent;
   border: transparent;
   cursor: pointer;
 }
 
 .auth__error button:after,
-.contacts__success button:after {
+.success button:after {
   display: inline-block;
   font-size: 1.5rem;
   content: "\00d7";
@@ -769,10 +542,6 @@ input {
     font-size: 1.2rem;
   }
 
-  .start {
-    border-radius: 1rem;
-  }
-
   .footer__author {
     font-size: 1.2rem;
   }
@@ -817,13 +586,6 @@ input {
 
 }
 
-
-@media(max-width: 1920px) {
-  .start__text {
-    margin-left: 15%;
-  }
-}
-
 @media(max-width: 1440px) {
 
   h1 {
@@ -844,26 +606,6 @@ input {
 
   * {
     font-size: 16px;
-  }
-
-  .start__image {
-    max-width: 22rem;
-  }
-
-  .company__watch_1 {
-    max-width: 18rem;
-  }
-
-  .company__watch_2 {
-    right: 5rem;
-    max-width: 19rem;
-    top: 12rem;
-  }
-
-  .company__square {
-    top: 1.5rem;
-    width: 18rem;
-    height: 25rem;
   }
 
   footer .logo {
@@ -940,35 +682,10 @@ input {
     display: none;
   }
 
-  .nav__button {
+  .button__nav {
     display: block;
     position: relative;
     z-index: 10;
-  }
-
-  .start__image {
-    max-width: 16rem;
-  }
-
-  .company {
-    gap: 1rem;
-  }
-
-  .company__images {
-    width: 40%;
-  }
-
-  .company__watch_1 {
-    right: 15%;
-  }
-
-  .company__watch_2 {
-    top: 25vw;
-    right: 15%;
-  }
-
-  .company__info {
-    width: 60%;
   }
 
   footer .logo {
@@ -1023,67 +740,8 @@ input {
     font-size: 1.5rem;
   }
 
-  .start__image {
-    max-width: 14rem;
-  }
-
-  .company {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .company__images {
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .company__watch_1 {
-    max-width: 14rem;
-    top: 1.5rem;
-    right: auto;
-  }
-
-  .company__watch_2 {
-    max-width: 15rem;
-    top: 14rem;
-    right: auto;
-  }
-
-  .company__square {
-    top: 3rem;
-    right: auto;
-    height: 20rem;
-  }
-
-  .company__info {
-    margin: 0;
-    width: 100%;
-  }
-
-  .company__header {
-    text-align: center;
-  }
-
-  .company__description {
-    text-align: center;
-  }
-
-  .contacts {
-    align-items: center;
-  }
-
-  .contacts__info {
-    width: 16rem;
-    margin-left: 0;
-  }
-
-  .contacts__info_element {
-    font-size: 1rem;
-  }
-
   .button__send {
-    width: 12rem;
+    max-width: 12rem;
   }
 
   .footer__info {
@@ -1158,42 +816,9 @@ input {
     padding: 10rem 2rem;
   }
 
-  .start {
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-    gap: 1rem;
-
-  }
-
-  .start__info {
-    margin: 0;
-    justify-content: space-between;
-    height: 100%;
-    padding-bottom: 2rem;
-  }
-
-  .start__text {
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .start__info a {
-    align-self: center;
-  }
-
-  .start__image {
-    margin: 0;
-  }
-
   .logo img {
     width: 5rem;
     height: 2rem;
-  }
-
-  .company {
-    height: 50rem;
-    gap: 28rem;
   }
 
   .auth input {
@@ -1218,29 +843,6 @@ input {
 }
 
 @media(max-width: 320px) {
-
-  .company {
-    height: 55rem;
-    gap: 0;
-  }
-
-  .company__watch_1 {
-    max-width: 10rem;
-  }
-
-  .company__watch_2 {
-    max-width: 11rem;
-  }
-
-  .company__square {
-    width: 14rem;
-    height: 15rem;
-    top: 5rem;
-  }
-
-  .contacts__info {
-    width: 12rem;
-  }
 
   footer {
     flex-direction: column;

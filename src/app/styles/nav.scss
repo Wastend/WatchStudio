@@ -1,0 +1,43 @@
+@import '../configs/colors.scss';
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10rem;
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+
+        & li {
+            list-style-type: none;
+        }
+    }
+
+    &__link {
+        line-height: 1;
+
+        &:hover {
+            color: $hover;
+            transition: 1s ease-out;
+        }
+
+        &:after {
+            display: block;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $hover;
+            content: "";
+            transition: width 0.3s ease-out;
+        }
+
+        &:hover:after,
+        &:focus:after {
+            width: 100%;
+        }
+    }
+}

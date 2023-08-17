@@ -15,8 +15,8 @@ const MainContacts = () => {
 
     return (
         <div className='contacts'>
-            <div className={`contacts__success${send === true ? ' open' : send === false ? ' close' : ''}`}>
-                <p>Заявка успешно отправлена</p>
+            <div className={`success${send === true ? ' open' : send === false ? ' close' : ''}`}>
+                <p className='success__text'>Заявка успешно отправлена</p>
                 <button onClick={() => setSend(false)}></button>
             </div>
 

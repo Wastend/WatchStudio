@@ -22,7 +22,7 @@ const Header = () => {
           <li ><NavLink className={`nav__link${openMenu ? ' menu__link' : ''}`} to="/articles" onClick={() => setOpenMenu(false)}>Новости</NavLink></li>
           <li ><NavLink className={`nav__link${openMenu ? ' menu__link' : ''}`} to={`${isAuth === null ? '/login' : '/profile'}`} onClick={() => setOpenMenu(false)}>Профиль</NavLink></li>
         </ul>
-        <button onClick={() => setOpenMenu(!openMenu)} className="nav__button">
+        <button onClick={() => setOpenMenu(!openMenu)} className="button__nav">
           <img src={images.button__menu} alt="menu" />
         </button>
       </nav>

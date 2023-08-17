@@ -1,0 +1,368 @@
+@import '../../app/configs/colors.scss';
+
+.start {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-image: url('../../app/assets/fon_start.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 2rem $white;
+    align-self: center;
+    align-items: center;
+    width: 100%;
+    height: 34.3rem;
+    gap: 3rem;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 50%;
+        gap: 2rem;
+        z-index: 1;
+        margin-left: 0.8rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: transparent;
+        align-self: flex-end;
+        gap: 2rem;
+        cursor: pointer;
+        transition: 1s ease-out;
+
+        & img {
+            position: relative;
+            width: 100%;
+            max-width: 4rem;
+            height: auto;
+        }
+
+        &:hover &__text {
+            color: $hover;
+            transition: 1s ease-out;
+        }
+    }
+
+    &__image {
+        position: relative;
+        max-width: 30rem;
+        width: 100%;
+        height: auto;
+        margin-right: 0.8rem;
+    }
+
+    @media(min-width: 1920px) {
+        & {
+            border-radius: 1rem;
+        }
+    }
+
+    @media(max-width: 1920px) {
+        &__text {
+            margin-left: 15%;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        &__image {
+            max-width: 22rem;
+        }
+    }
+
+    @media(max-width: 768px) {
+        &__image {
+            max-width: 16rem;
+        }
+
+        &__link img {
+            max-width: 2rem;
+        }
+    }
+
+    @media(max-width: 425px) {
+        &__image {
+            max-width: 14rem;
+        }
+    }
+
+    @media(max-width: 375px) {
+        & {
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0;
+            gap: 1rem;
+
+        }
+
+        &__info {
+            margin: 0;
+            justify-content: space-between;
+            height: 100%;
+            padding-bottom: 2rem;
+        }
+
+        &__text {
+            text-align: center;
+            margin-left: 0;
+        }
+
+        &__link {
+            align-self: center;
+        }
+
+        &__image {
+            margin: 0;
+        }
+    }
+}
+
+.company {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50rem;
+    gap: 5.7rem;
+    padding: 1rem;
+
+    &__images {
+        display: flex;
+        width: 50%;
+        position: relative;
+    }
+
+    &__watch_1 {
+        position: absolute;
+        top: -6.7rem;
+        right: 2.5rem;
+        width: 100%;
+        max-width: 25rem;
+        height: auto;
+        border-radius: 1rem;
+        z-index: 3;
+    }
+
+    &__watch_2 {
+        position: absolute;
+        top: 18rem;
+        right: 10rem;
+        width: 100%;
+        max-width: 27rem;
+        height: auto;
+        border-radius: 1rem;
+        z-index: 2;
+    }
+
+    &__square {
+        position: absolute;
+        background-color: $square;
+        right: 0;
+        top: 6rem;
+        width: 24rem;
+        height: 31rem;
+        border-radius: 1rem;
+        z-index: 1;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-top: 7rem;
+        gap: 3.5rem;
+    }
+
+    &__header {
+        text-shadow: 1.5rem 1.5rem $shadow;
+    }
+
+    @media(max-width: 1024px) {
+        &__watch_1 {
+            max-width: 18rem;
+        }
+
+        &__watch_2 {
+            right: 5rem;
+            max-width: 19rem;
+            top: 12rem;
+        }
+
+        &__square {
+            top: 1.5rem;
+            width: 18rem;
+            height: 25rem;
+        }
+    }
+
+    @media(max-width: 768px) {
+        & {
+            gap: 1rem;
+        }
+
+        &__images {
+            width: 40%;
+        }
+
+        &__watch_1 {
+            right: 15%;
+        }
+
+        &__watch_2 {
+            top: 25vw;
+            right: 15%;
+        }
+
+        &__info {
+            width: 60%;
+        }
+    }
+
+    @media(max-width: 425px) {
+        & {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__images {
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &__watch_1 {
+            max-width: 14rem;
+            top: 1.5rem;
+            right: auto;
+        }
+
+        &__watch_2 {
+            max-width: 15rem;
+            top: 14rem;
+            right: auto;
+        }
+
+        &__square {
+            top: 3rem;
+            right: auto;
+            height: 20rem;
+        }
+
+        &__info {
+            margin: 0;
+            width: 100%;
+        }
+
+        &__header {
+            text-align: center;
+        }
+
+        &__description {
+            text-align: center;
+        }
+    }
+
+    @media(max-width: 375px) {
+        & {
+            height: 50rem;
+            gap: 28rem;
+        }
+    }
+
+    @media(max-width: 320px) {
+        & {
+            height: 55rem;
+            gap: 0;
+        }
+
+        &__watch_1 {
+            max-width: 10rem;
+        }
+
+        &__watch_2 {
+            max-width: 11rem;
+        }
+
+        &__square {
+            width: 14rem;
+            height: 15rem;
+            top: 5rem;
+        }
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 39rem;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $black 60%), url('./../../app/assets/map.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 2rem $white;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        height: auto;
+        border: 1px solid $white;
+        border-radius: 0.8rem;
+        box-shadow: 0 0 1rem $white;
+        margin-left: 15vw;
+        padding: 1rem;
+        gap: 1rem;
+
+        &_header {
+            align-self: center;
+            text-shadow: 1rem 1.2rem $shadow;
+        }
+
+        &_block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        &_element {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+
+            & img {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+
+    @media(max-width: 425px) {
+        & {
+            align-items: center;
+        }
+
+        &__info {
+            width: 16rem;
+            margin-left: 0;
+
+            &_element {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media(max-width: 320px) {
+
+        &__info {
+            width: 60%;
+            font-size: 1rem;
+        }
+    }
+}
