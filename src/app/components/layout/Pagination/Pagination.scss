@@ -1,0 +1,37 @@
+@import '../../../configs/colors.scss';
+
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+
+    &__button {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.5rem;
+        background-color: $square;
+        box-shadow: 0 0 0.2rem $white;
+        border: 1px solid $white;
+        cursor: pointer;
+        transition: 0.4s;
+
+        &:hover {
+            background-color: $square__hover;
+            transition: 0.4s;
+        }
+
+        &.active {
+            background-color: $hover;
+            color: $square;
+            border: 1px solid $square;
+
+            &:hover {
+                background-color: $dark__gray;
+                transition: 0.4s;
+            }
+        }
+    }
+
+    & li {
+        list-style-type: none;
+    }
+}

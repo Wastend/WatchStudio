@@ -1,0 +1,19 @@
+@keyframes open {
+    from {
+        margin-top: -50rem;
+    }
+
+    to {
+        margin-top: -20rem;
+    }
+}
+
+@keyframes close {
+    from {
+        margin-top: -20rem;
+    }
+
+    to {
+        margin-top: -50rem;
+    }
+}

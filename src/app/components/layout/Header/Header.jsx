@@ -15,15 +15,47 @@ const Header = () => {
 
   return (
     <header>
-      <NavLink className='logo' to='/' ><img src={images.logo} alt="Logo" /></NavLink>
+      <NavLink
+        className='logo'
+        to='/' ><img src={images.logo} alt='Logo' />
+      </NavLink>
       <nav className={`nav${openMenu ? ' open' : ''}`}>
-        <ul className="nav__list">
-          {openMenu && <li ><NavLink className='nav__link menu__link' to="/" onClick={() => setOpenMenu(false)}>Главная</NavLink></li>}
-          <li ><NavLink className={`nav__link${openMenu ? ' menu__link' : ''}`} to="/articles" onClick={() => setOpenMenu(false)}>Новости</NavLink></li>
-          <li ><NavLink className={`nav__link${openMenu ? ' menu__link' : ''}`} to={`${isAuth === null ? '/login' : '/profile'}`} onClick={() => setOpenMenu(false)}>Профиль</NavLink></li>
+        <ul className='nav__list'>
+          {openMenu &&
+            <li >
+              <NavLink
+                className='nav__link menu__link'
+                to='/'
+                onClick={() => setOpenMenu(false)}
+              >
+                Главная
+              </NavLink>
+            </li>
+          }
+          <li >
+            <NavLink
+              className={`nav__link${openMenu ? ' menu__link' : ''}`}
+              to='/articles'
+              onClick={() => setOpenMenu(false)}
+            >
+              Новости
+            </NavLink>
+          </li>
+          <li >
+            <NavLink
+              className={`nav__link${openMenu ? ' menu__link' : ''}`}
+              to={`${isAuth === null ? '/login' : '/profile'}`}
+              onClick={() => setOpenMenu(false)}
+            >
+              Профиль
+            </NavLink>
+          </li>
         </ul>
-        <button onClick={() => setOpenMenu(!openMenu)} className="button__nav">
-          <img src={images.button__menu} alt="menu" />
+        <button
+          className='button__nav'
+          onClick={() => setOpenMenu(!openMenu)}
+        >
+          <img src={images.button__menu} alt='menu' />
         </button>
       </nav>
 

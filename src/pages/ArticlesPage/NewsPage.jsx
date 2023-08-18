@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import './NewsPage.scss'
 
 const ArticlePage = (props) => {
 
@@ -11,26 +12,34 @@ const ArticlePage = (props) => {
 
   return (
     <div className='news'>
-      <div className="news__topbar">
-        <NavLink to='/articles' className='topbar__link_back'>
-          <div className="triangle__back"></div>
+      <div className='news__topbar'>
+        <NavLink
+          className='topbar__link_back'
+          to='/articles'
+        >
+          <div className='triangle__back' />
           Назад
         </NavLink>
-        <div className="news__topbar_right">
-          <p>
+        <div className='news__topbar_right'>
+          <p className='news__topbar__text'>
             {`Новости ${article.date}`}
           </p>
-          <p>{`Автор ${article.author}`}</p>
+          <p className='news__topbar__text'>
+            {`Автор ${article.author}`}
+          </p>
         </div>
 
       </div>
-      <div className="news__info__header">
-        <img src={article.image} alt="news" />
-        <h1>{article.header}</h1>
+      <div className='news__info__header'>
+        <img src={article.image} alt='news' />
+        <h1 className='news__info__name'>
+          {article.header}
+        </h1>
       </div>
       <hr />
-      <div dangerouslySetInnerHTML={{ __html: article.html }} className="news__info__description">
-      </div>
+      <div
+        className='news__info__description'
+        dangerouslySetInnerHTML={{ __html: article.html }} />
     </div>
   )
 }

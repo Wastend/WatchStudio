@@ -1,0 +1,187 @@
+@import '../../app/configs/colors.scss';
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    &__header {
+        font-weight: 100;
+        text-shadow: 0 1.5rem $shadow;
+    }
+
+    &__cards {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(3, 20rem);
+        grid-gap: 2rem;
+    }
+
+    & input {
+        width: 20rem;
+    }
+
+    @media(max-width:1920px) {
+        &__cards {
+            grid-template-columns: repeat(3, 22rem);
+        }
+
+        & input {
+            width: 24rem;
+            height: 2rem;
+        }
+    }
+
+    @media(max-width: 1440px) {
+        &__cards {
+            grid-template-columns: repeat(3, 16rem);
+        }
+    }
+
+    @media(max-width: 1024px) {
+        &__cards {
+            grid-template-columns: repeat(3, 14rem);
+        }
+    }
+
+    @media(max-width: 768px) {
+        &__cards {
+            grid-template-columns: repeat(2, 12rem);
+        }
+    }
+
+    @media(max-width: 425px) {
+        &__cards {
+            grid-template-columns: 80vw;
+        }
+
+        & input {
+            width: 60%;
+        }
+    }
+}
+
+
+.article__card {
+    display: grid;
+    position: relative;
+    grid-gap: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem $white;
+
+    &__date {
+        font-size: 0.8rem;
+        margin: 0 0.4rem;
+    }
+
+    &__header {
+        font-weight: 800;
+        margin: 0 0.4rem;
+        height: 3.5rem;
+        overflow: hidden;
+    }
+
+    &__description {
+        font-size: 0.9rem;
+        margin: 0 0.4rem;
+        height: 4.5rem;
+        overflow: hidden;
+    }
+
+    & img {
+        width: 20rem;
+        height: 16rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.5rem $white;
+    }
+
+    & a {
+        text-decoration: underline;
+        position: relative;
+        margin: 0 0.4rem 1rem 0.4rem;
+        width: fit-content;
+    }
+
+    @media(max-width:1920px) {
+        &__card__date {
+            font-size: 1rem;
+        }
+
+        &__card__header {
+            font-size: 1.1rem;
+        }
+
+        &__card__description {
+            font-size: 1rem;
+        }
+
+        &__card a {
+            font-size: 1.2rem;
+        }
+
+        & img {
+            width: 22rem;
+        }
+    }
+
+    @media(max-width: 1440px) {
+        & img {
+            width: 16rem;
+            height: 13rem;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        & img {
+            width: 14rem;
+            height: 11rem;
+        }
+    }
+
+    @media(max-width: 768px) {
+        &__header {
+            font-size: 0.8rem;
+        }
+
+        &__description {
+            font-size: 0.7rem;
+        }
+
+        & img {
+            width: 12rem;
+            height: 9rem;
+        }
+    }
+
+    @media(max-width: 425px) {
+        &__date {
+            font-size: 1rem;
+        }
+
+        &__header {
+            font-size: 1.2rem;
+            height: 4.6rem;
+        }
+
+        &__description {
+            font-size: 1rem;
+        }
+
+        & a {
+            font-size: 1.2rem;
+        }
+
+        & img {
+            width: 80vw;
+            height: 60vw;
+        }
+    }
+
+    @media(max-width: 375px) {
+        & {
+            gap: 1.2rem;
+        }
+    }
+}

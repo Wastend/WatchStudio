@@ -1,0 +1,41 @@
+@import '../../app/configs/colors.scss';
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-self: center;
+    width: 100%;
+    gap: 1rem;
+
+    &__nickname {
+        align-self: flex-end;
+        margin: 2rem 10vw 0 10vw;
+    }
+
+    &__name {
+        text-shadow: 1rem 1rem $shadow;
+        margin: 0 10vw;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        margin: 0 10vw;
+        gap: 0.4rem;
+
+        &__block {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        &__header {
+            color: $dark__gray;
+        }
+
+        & .button__send {
+            align-self: flex-start;
+            margin: 0 10vw 2rem 10vw;
+        }
+    }
+}

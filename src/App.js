@@ -19,19 +19,37 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainLayout />} >
-          <Route path='/' element={<pages.MainPage />} />
-          <Route path='/articles' element={<pages.ArticlesPage />} />
-          {isAuth ? <Route path='/profile' element={<pages.ProfilePage />} />
-            : ["/login", "/profile"].map((path, index) =>
-              <Route path={path} element={<pages.AuthPage />} key={index} />
+        <Route
+          path='/'
+          element={<MainLayout />} >
+          <Route
+            path='/'
+            element={<pages.MainPage />} />
+          <Route
+            path='/articles'
+            element={<pages.ArticlesPage />} />
+          {isAuth ?
+            <Route
+              path='/profile'
+              element={<pages.ProfilePage />} />
+            :
+            ['/login', '/profile'].map((path, index) =>
+              <Route
+                path={path}
+                element={<pages.AuthPage />}
+                key={index} />
             )
           }
           {data.map(article => (
-            <Route path={`/articles/${article.id}`} element={<pages.NewsPage article={article} />} key={article.id} />
+            <Route
+              path={`/articles/${article.id}`}
+              element={<pages.NewsPage article={article} />}
+              key={article.id} />
           ))}
         </Route>
-        <Route path='*' element={<pages.ErrorPage />} />
+        <Route
+          path='*'
+          element={<pages.ErrorPage />} />
       </Routes>
     </BrowserRouter >
   )

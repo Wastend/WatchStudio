@@ -1,0 +1,81 @@
+@import '../configs/colors.scss';
+
+.success {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 18rem;
+    height: 2rem;
+    background-color: $success;
+    border: 1px solid $success__text;
+    align-self: center;
+    border-radius: 0.5rem;
+    z-index: 100;
+
+    &__text {
+        color: $success__text;
+        font-weight: bold;
+    }
+}
+
+.error {
+    display: none;
+    position: fixed;
+    padding: 1rem;
+    width: 18rem;
+    height: 2rem;
+    background-color: $error;
+    border: 1px solid $error__text;
+    border-radius: 0.5rem;
+    z-index: 100;
+
+    &__text {
+        color: $error__text;
+        font-weight: bold;
+    }
+
+    @media(max-width:375px) {
+        & {
+            width: 16rem;
+        }
+
+        & p {
+            font-size: 0.8rem;
+        }
+
+        & button::after {
+            font-size: 1rem;
+        }
+    }
+}
+
+.error.open,
+.success.open {
+    display: flex;
+    animation: open 1s;
+    margin-top: -20rem;
+}
+
+.error.close,
+.success.close {
+    display: flex;
+    margin-top: -1000rem;
+    animation: close 1s;
+}
+
+.error button,
+.success button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.error button:after,
+.success button:after {
+    display: inline-block;
+    font-size: 1.5rem;
+    content: "\00d7";
+    color: $black;
+}

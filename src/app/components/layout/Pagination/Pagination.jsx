@@ -1,4 +1,5 @@
 import React from 'react'
+import './Pagination.scss'
 
 const Pagination = ({ articlesPerPage, totalArticles, paginate, currentPage }) => {
 
@@ -17,7 +18,10 @@ const Pagination = ({ articlesPerPage, totalArticles, paginate, currentPage }) =
     <ul className='pagination'>
       {pageNumbers.map(number => (
         <li key={number}>
-          <button onClick={() => setPage(number)} className={`pagination__button${currentPage === number ? ' active' : ''}`}>
+          <button
+            className={`pagination__button${currentPage === number ? ' active' : ''}`}
+            onClick={() => setPage(number)}
+          >
             {number}
           </button>
         </li>

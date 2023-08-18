@@ -1,0 +1,118 @@
+@import '../../app/configs/colors.scss';
+
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__topbar {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10rem;
+        align-items: center;
+
+        &__right {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        &__text {
+            display: flex;
+            gap: 0.2rem;
+            font-weight: bold;
+        }
+    }
+
+    &__info {
+        &__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10rem;
+            gap: 4rem;
+
+            & img {
+                width: 100%;
+                max-width: 70%;
+                height: auto;
+                border-radius: 1rem;
+                box-shadow: 0 0 1rem $white;
+            }
+        }
+
+        &__name {
+            text-align: center;
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 0 10rem;
+
+            &_text {
+                text-indent: 4rem;
+                font-size: 1.25rem;
+                text-align: justify;
+            }
+        }
+    }
+
+    & hr {
+        width: 80%;
+        align-self: center;
+        box-shadow: 0 0 0.5rem $white;
+    }
+
+    @media(max-width: 1024px) {
+        &__topbar {
+            margin: 0 5rem;
+        }
+
+        &__info {
+            &__header {
+                margin: 0 5rem;
+            }
+
+            &__description {
+                margin: 0 5rem;
+            }
+        }
+    }
+
+    @media(max-width: 768px) {
+        &__info__header {
+            gap: 1rem;
+            margin: 0 3rem;
+        }
+    }
+
+    @media(max-width: 425px) {
+        &__topbar {
+            margin: 0 2rem;
+        }
+
+        &__info {
+
+            &__header {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                margin: 0 2rem;
+            }
+
+            &__name {
+                text-align: center;
+            }
+
+            &__description {
+                margin: 0 2rem;
+            }
+
+            &__header img {
+                max-width: none;
+            }
+        }
+    }
+}

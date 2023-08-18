@@ -1,4 +1,5 @@
 @import './app/configs/colors.scss';
+@import './app/styles/Animations.scss';
 
 * {
   margin: 0;
@@ -37,6 +38,15 @@ a {
   text-decoration: none;
 }
 
+input {
+  height: 2rem;
+  border-radius: 0.4rem;
+  background-color: $gray;
+  width: 100%;
+  padding: 0 1rem;
+  color: $square;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -68,28 +78,15 @@ footer {
   max-width: 1920px;
 }
 
-.logo {
-  margin-left: 10rem;
-}
-
-.logo img {
-  width: 10rem;
-  height: 4rem;
-}
-
-.menu__link {
-  text-shadow: 1.5rem 1.5rem $shadow;
-}
-
 .button__nav {
   border: 0;
   background-color: transparent;
   display: none;
-}
 
-.button__nav img {
-  width: 2rem;
-  max-height: 2rem;
+  & img {
+    width: 2rem;
+    max-height: 2rem;
+  }
 }
 
 .button__send {
@@ -102,135 +99,11 @@ footer {
   border-radius: 0.3rem;
   box-shadow: -0.5rem 0.5rem 1px $shadow;
   transition: 1s;
-}
 
-.success {
-  display: none;
-  position: absolute;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  width: 18rem;
-  height: 2rem;
-  background-color: $success;
-  border: 1px solid $success__text;
-  align-self: center;
-  border-radius: 0.5rem;
-  z-index: 100;
-}
-
-.success__text {
-  color: $success__text;
-  font-weight: bold;
-}
-
-.button__send:hover {
-  font-size: 1.1rem;
-  transition: 1s;
-}
-
-.footer__info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footer__nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 10rem;
-  gap: 3rem;
-}
-
-.footer__media {
-  list-style-type: none;
-}
-
-.auth {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.auth__error {
-  display: none;
-  position: fixed;
-  padding: 1rem;
-  width: 18rem;
-  height: 2rem;
-  background-color: $error;
-  border: 1px solid $error__text;
-  border-radius: 0.5rem;
-  z-index: 100;
-}
-
-.auth__error.open,
-.success.open {
-  display: flex;
-  animation: open 1s;
-  margin-top: -20rem;
-}
-
-.auth__error.close,
-.success.close {
-  display: flex;
-  margin-top: -1000rem;
-  animation: close 1s;
-}
-
-.auth__error p {
-  color: $error__text;
-  font-weight: bold;
-}
-
-.auth__error button,
-.success button {
-  background-color: transparent;
-  border: transparent;
-  cursor: pointer;
-}
-
-.auth__error button:after,
-.success button:after {
-  display: inline-block;
-  font-size: 1.5rem;
-  content: "\00d7";
-  color: $black;
-}
-
-.auth__block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 1rem;
-  width: 20rem;
-  gap: 1rem;
-}
-
-.auth__header {
-  color: $white;
-  text-align: center;
-}
-
-.auth__block form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-input {
-  height: 2rem;
-  border-radius: 0.4rem;
-  background-color: $gray;
-  width: 100%;
-  padding: 0 1rem;
-  color: $square;
+  &:hover {
+    font-size: 1.1rem;
+    transition: 1s;
+  }
 }
 
 .button__login {
@@ -240,172 +113,46 @@ input {
   border-radius: 0.4rem;
   color: $square;
   cursor: pointer;
+
+  &:disabled {
+    background-color: $square;
+    color: $shadow;
+    cursor: auto;
+  }
 }
 
-.button__login:disabled {
-  background-color: $square;
-  color: $shadow;
-  cursor: auto;
+.logo {
+  margin-left: 10rem;
+
+  & img {
+    width: 10rem;
+    height: 4rem;
+  }
 }
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-self: center;
-  width: 100%;
-  gap: 1rem;
+.menu__link {
+  text-shadow: 1.5rem 1.5rem $shadow;
 }
 
-.profile__nickname {
-  align-self: flex-end;
-  margin: 2rem 10vw 0 10vw;
-}
+.footer {
+  &__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
 
-.profile__name {
-  text-shadow: 1rem 1rem $shadow;
-  margin: 0 10vw;
-}
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 10rem;
+    gap: 3rem;
+  }
 
-.profile__info {
-  display: flex;
-  flex-direction: column;
-  margin: 0 10vw;
-  gap: 0.4rem;
-}
-
-.profile__info__block {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.profile__info__header {
-  color: $dark__gray;
-}
-
-.profile .button__send {
-  align-self: flex-start;
-  margin: 0 10vw 2rem 10vw;
-}
-
-.articles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.articles__header {
-  font-weight: 100;
-  text-shadow: 0 1.5rem $shadow;
-}
-
-.articles input {
-  width: 20rem;
-}
-
-.articles__cards {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(3, 20rem);
-  grid-gap: 2rem;
-}
-
-.article__card {
-  display: grid;
-  position: relative;
-  grid-gap: 0.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem $white;
-}
-
-.article__card img {
-  width: 20rem;
-  height: 16rem;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem $white;
-}
-
-.article__card__date {
-  font-size: 0.8rem;
-  margin: 0 0.4rem;
-}
-
-.article__card__header {
-  font-weight: 800;
-  margin: 0 0.4rem;
-  height: 3.5rem;
-  overflow: hidden;
-}
-
-.article__card__description {
-  font-size: 0.9rem;
-  margin: 0 0.4rem;
-  height: 4.5rem;
-  overflow: hidden;
-}
-
-.article__card a {
-  text-decoration: underline;
-  position: relative;
-  margin: 0 0.4rem 1rem 0.4rem;
-  width: fit-content;
-}
-
-.pagination {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.pagination li {
-  list-style-type: none;
-}
-
-.pagination__button {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: $square;
-  box-shadow: 0 0 0.2rem $white;
-  border: 1px solid $white;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.pagination__button:hover {
-  background-color: $square__hover;
-  transition: 0.4s;
-}
-
-.pagination__button.active {
-  background-color: $hover;
-  color: $square;
-  border: 1px solid $square;
-}
-
-.pagination__button.active:hover {
-  background-color: $dark__gray;
-  transition: 0.4s;
-}
-
-.news {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.news hr {
-  width: 80%;
-  align-self: center;
-  box-shadow: 0 0 0.5rem $white;
-}
-
-.news__topbar {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10rem;
-  align-items: center;
+  &__media {
+    list-style-type: none;
+  }
 }
 
 .topbar__link_back {
@@ -425,51 +172,6 @@ input {
   transform: rotate(-135deg);
 }
 
-.news__topbar_right {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.news__topbar p {
-  display: flex;
-  gap: 0.2rem;
-  font-weight: bold;
-}
-
-.news__info__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 10rem;
-  gap: 4rem;
-}
-
-.news__info__header img {
-  width: 100%;
-  max-width: 70%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 0 1rem $white;
-}
-
-.news__info__header h1 {
-  text-align: center;
-}
-
-.news__info__description {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 0 10rem;
-}
-
-.news__info__description p {
-  text-indent: 4rem;
-  font-size: 1.25rem;
-  text-align: justify;
-}
-
 .error__page {
   display: flex;
   flex-direction: column;
@@ -480,33 +182,9 @@ input {
   gap: 2rem;
 }
 
-@keyframes open {
-  from {
-    margin-top: -50rem;
-  }
-
-  to {
-    margin-top: -20rem;
-  }
-}
-
-@keyframes close {
-  from {
-    margin-top: -20rem;
-  }
-
-  to {
-    margin-top: -50rem;
-  }
-}
-
 @media(min-width: 2560px) {
   * {
     font-size: 20px;
-  }
-
-  .nav__link {
-    font-size: 2rem;
   }
 
   .footer__author {
@@ -524,7 +202,6 @@ input {
 }
 
 @media(min-width:1920px) {
-
   * {
     font-size: 18px;
   }
@@ -536,10 +213,6 @@ input {
   .logo img {
     width: 10rem;
     height: 4rem;
-  }
-
-  .nav__link {
-    font-size: 1.2rem;
   }
 
   .footer__author {
@@ -555,55 +228,15 @@ input {
     height: 1.2rem;
   }
 
-  .articles input {
-    width: 24rem;
-    height: 2rem;
-  }
-
-  .articles__cards {
-    grid-template-columns: repeat(3, 22rem);
-  }
-
-  .article__card img {
-    width: 22rem;
-  }
-
-  .article__card__date {
-    font-size: 1rem;
-  }
-
-  .article__card__header {
-    font-size: 1.1rem;
-  }
-
-  .article__card__description {
-    font-size: 1rem;
-  }
-
-  .article__card a {
-    font-size: 1.2rem;
-  }
-
 }
 
 @media(max-width: 1440px) {
-
   h1 {
     font-size: 3rem;
-  }
-
-  .articles__cards {
-    grid-template-columns: repeat(3, 16rem);
-  }
-
-  .article__card img {
-    width: 16rem;
-    height: 13rem;
   }
 }
 
 @media(max-width: 1024px) {
-
   * {
     font-size: 16px;
   }
@@ -614,27 +247,6 @@ input {
 
   .footer__nav {
     margin-right: 5rem;
-  }
-
-  .articles__cards {
-    grid-template-columns: repeat(3, 14rem);
-  }
-
-  .article__card img {
-    width: 14rem;
-    height: 11rem;
-  }
-
-  .news__topbar {
-    margin: 0 5rem;
-  }
-
-  .news__info__header {
-    margin: 0 5rem;
-  }
-
-  .news__info__description {
-    margin: 0 5rem;
   }
 }
 
@@ -654,32 +266,6 @@ input {
 
   .logo {
     margin-left: 3rem;
-  }
-
-  .nav {
-    margin-right: 3rem;
-  }
-
-  .nav.open .nav__list {
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $black;
-    padding: 8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav.open a {
-    font-size: 2rem;
-  }
-
-  .nav__list {
-    display: none;
   }
 
   .button__nav {
@@ -704,28 +290,6 @@ input {
 
   .footer__author {
     font-size: 0.6rem;
-  }
-
-  .articles__cards {
-    grid-template-columns: repeat(2, 12rem);
-  }
-
-  .article__card img {
-    width: 12rem;
-    height: 9rem;
-  }
-
-  .article__card__header {
-    font-size: 0.8rem;
-  }
-
-  .article__card__description {
-    font-size: 0.7rem;
-  }
-
-  .news__info__header {
-    gap: 1rem;
-    margin: 0 3rem;
   }
 
 }
@@ -755,95 +319,16 @@ input {
   .footer__nav {
     flex-direction: column;
   }
-
-  .articles__cards {
-    grid-template-columns: 80vw;
-  }
-
-  .article__card__date {
-    font-size: 1rem;
-  }
-
-  .article__card__header {
-    font-size: 1.2rem;
-    height: 4.6rem;
-  }
-
-  .article__card__description {
-    font-size: 1rem;
-  }
-
-  .article__card a {
-    font-size: 1.2rem;
-  }
-
-  .article__card img {
-    width: 80vw;
-    height: 60vw;
-  }
-
-  .articles input {
-    width: 60%;
-  }
-
-  .news__topbar {
-    margin: 0 2rem;
-  }
-
-  .news__info__header img {
-    max-width: none;
-  }
-
-  .news__info__header {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 0 2rem;
-  }
-
-  .news__info__header h1 {
-    text-align: center;
-  }
-
-  .news__info__description {
-    margin: 0 2rem;
-  }
 }
 
 @media(max-width: 375px) {
-
-  .nav.open .nav__list {
-    padding: 10rem 2rem;
-  }
-
   .logo img {
     width: 5rem;
     height: 2rem;
   }
-
-  .auth input {
-    width: 80%;
-  }
-
-  .auth__error {
-    width: 16rem;
-  }
-
-  .auth__error p {
-    font-size: 0.8rem;
-  }
-
-  .auth__error button::after {
-    font-size: 1rem;
-  }
-
-  .article__card {
-    gap: 1.2rem;
-  }
 }
 
 @media(max-width: 320px) {
-
   footer {
     flex-direction: column;
     gap: 1rem;

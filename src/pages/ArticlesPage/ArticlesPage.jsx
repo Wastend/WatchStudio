@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { debounce } from 'lodash'
 import db from '../../app/data/db.json'
 import ArticlesCard from './ArticlesCard'
-import Pagination from '../../app/components/layout/Pagination'
-
+import Pagination from '../../app/components/layout/Pagination/Pagination'
+import './ArticlesPage.scss'
 
 const ArticlesPage = () => {
 
@@ -56,14 +56,29 @@ const ArticlesPage = () => {
 
   return (
     <div className='articles'>
-      <h1 className='articles__header'>Новости</h1>
-      <input placeholder='Поиск...' onChange={handleText} type="text" />
-      <div className="articles__cards">
+      <h1 className='articles__header'>
+        Новости
+      </h1>
+      <input
+        placeholder='Поиск...'
+        onChange={handleText}
+        type='text' />
+      <div className='articles__cards'>
         {currentArticles.map(el =>
-          <ArticlesCard image={el.image} date={el.date} header={el.header} description={el.description} key={el.id} id={el.id} />
+          <ArticlesCard
+            image={el.image}
+            date={el.date}
+            header={el.header}
+            description={el.description}
+            key={el.id}
+            id={el.id} />
         )}
       </div>
-      <Pagination articlesPerPage={articlesPerPage} totalArticles={filteredArticles.length} paginate={paginate} currentPage={currentPage} />
+      <Pagination
+        articlesPerPage={articlesPerPage}
+        totalArticles={filteredArticles.length}
+        paginate={paginate}
+        currentPage={currentPage} />
     </div>
   )
 }
