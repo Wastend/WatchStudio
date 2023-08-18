@@ -265,7 +265,7 @@ footer {
   }
 
   .logo {
-    margin-left: 3rem;
+    margin-left: 5rem;
   }
 
   .button__nav {
@@ -322,6 +322,10 @@ footer {
 }
 
 @media(max-width: 375px) {
+  .logo {
+    margin-left: 3rem;
+  }
+
   .logo img {
     width: 5rem;
     height: 2rem;
